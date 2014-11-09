@@ -1,62 +1,62 @@
 # GifLinks
 
-A simple javascript library used for adding full screen gif action as a hover effect. This is very serious stuff, [here's a demo](http://tholman.com/giflinks)! You can also play with the source [live on CodePen](http://codepen.io/tholman/pen/gJBdi).
+Простая javascript библиотека для добавления полноэкранных gif как hover-эффектов. Это очень серьезно, [вот демо](http://tholman.com/giflinks)! Можно также поиграть с исходным кодом [вживую на CodePen](http://codepen.io/tholman/pen/gJBdi).
 
-### Instructions
+### Инструкции
 
-GifLinks is a stand alone library (no jquery, or the likes) so usage is pretty straight forward. All styling of elements is up to the user, `GifLinks.js` only handles the creation, styling and management of the gif popup, as well as providing a few css classes for custom styling.
+GifLinks это самостоятельная библиотека (никаких jquery, и тому подобного) так что использование довольно прямолинейно. Вся стилизация элементов в руках пользователей, `GifLinks.js` только управляет созданием, стилизацией и управлением gif-попапом, предоставляя несколько css-классов для кастомной стилизации.
 
 #### HTML
 
-There aren't many restrictions for the `html` elements you want to use to activate GifLinks, the one mandatory attribute a `data-src`, which needs to point to the gif/image you wish to flash up when hovering.
+Есть не так много ограничений на то, какие 'html'-элементы можно использовать для GifLinks, единственно необходимым является атрибут `data-src`, который должен указывать на gif/image, который вы хотите показать на hover-е.
 
 ```html
-<a href="awesome.html" data-src="./img/awesome.gif"> Check this out! </a>
+<a href="awesome.html" data-src="./img/awesome.gif"> Ты только посмотри на это! </a>
 
-<!-- You can use any html element, really -->
+<!-- Можно использовать любой элемент, серьезно -->
 
-<span class="anything" data-src="./img/amazing.gif" /> Kapow! </span>
+<span class="anything" data-src="./img/amazing.gif" /> Бабах! </span>
 ```
 
 #### JS
 
-GifLinks.js is fairly robust when it comes to assigning elements to be used, its as simple as passing them to the ```Giflinks``` function, once they have been rendered. You can do this with `document.querySelector` finding your elements however you like.
+Чтобы начать использовать GifLinks.js, просто передайте элемент в функцию ```Giflinks```, когда они отрендерятся. Это можно сделать с `document.querySelector`, выбирая элементы как вам нравится.
 
 ```html
-<a href="awesome.html" data-src="./img/awesome.gif"> Check this out! </a>
+<a href="awesome.html" data-src="./img/awesome.gif"> Посмотри сюда! </a>
 
 <script>
 window.onload = function() {
-	// Add GifLinks to all anchor tags on the page!
+	// Добавим GifLink-и ко всем якорям на странице!
     var element = document.querySelector( 'a' );
 	GifLinks( element );
 }
 </script>
 ```
 
-Or doing multiple at once, with a classname.
+Или несколько за один раз через имя класса.
 
 ```html
-<a class="giflink-to-be" href="awesome.html" data-src="./img/awesome.gif"> Check this out! </a>
-<a class="giflink-to-be" href="incredible.html" data-src="./img/incredible.gif"> Just Incredible! </a>
+<a class="giflink-to-be" href="awesome.html" data-src="./img/awesome.gif"> Посмотри сюда! </a>
+<a class="giflink-to-be" href="incredible.html" data-src="./img/incredible.gif"> Просто Изумительно! </a>
 
 <script>
 window.onload = function() {
-	// Giflinkify all images with the 'giflink-to-be' classname.
+	// Перевести все картинки в Giflink-и с классом 'giflink-to-be'.
     var elements = document.querySelectorAll( '.giflink-to-be' );
 	GifLinks( elements );
 }
 </script>
 ```
 
-You can also pass in an option to preload the image, In this case the giflinks will only become active when loading is complete!
+Также можно передать флаг для прелоада картинки. В таком случае giflinks будут активны как только загрузка завершится!
 
 ```html
-<a href="awesome.html" data-src="./img/awesome.gif"> Check this out! </a>
+<a href="awesome.html" data-src="./img/awesome.gif"> Посмотри сюда! </a>
 
 <script>
 window.onload = function() {
-	// Add GifLinks to all a tags on the page, and preload!
+	// Добавим GifLink-и ко всем а-тэгам на странице и попросим либу сделать пре-лоад!
     var element = document.querySelector( 'a' );
 	GifLinks( element, { preload: true } );
 }
@@ -64,11 +64,11 @@ window.onload = function() {
 ```
 
 #### CSS
-There are a few little things to play with, when it comes to css.
+Есть несколько мелких вещей, с которыми можно играть с css.
 
-All active giflinks will have a `ready` and a `giflink` class. As well as a `has-link` and `no-link` class, if the element contains an active href.
+У всех активных giflink есть классы `ready` и `giflink`. А если в элементе есть активная ссылка, также добавятся `has-link` и `no-link`.
 
-Also, if you preload, the giflinks will recieve a `preloaded` class, which can be used to show the link is ready to be hovered, for example:
+Также, если вы пользуетесь прелоадом, giflink-и получат класс `preloaded`, который можно использовать, чтобы показать, что ссылка доступна, например так:
 
 ```css
 .giflink.preloaded {
@@ -77,7 +77,7 @@ Also, if you preload, the giflinks will recieve a `preloaded` class, which can b
 }
 ```
 
-### License
+### Лицензия
 
 The MIT License (MIT)
 
