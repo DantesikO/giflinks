@@ -1,6 +1,6 @@
 # GifLinks
 
-Простая javascript библиотека для добавления полноэкранных gif как hover-эффектов. Это очень серьезно, [вот демо](http://tholman.com/giflinks)! Можно также поиграть с исходным кодом [вживую на CodePen](http://codepen.io/tholman/pen/gJBdi).
+Простая javascript библиотека для добавления полноэкранных gif как hover-эффектов. Это очень серьезно, [вот демо](http://codehipsters.github.io/giflinks)! Можно также поиграть с исходным кодом [вживую на CodePen](http://codepen.io/tholman/pen/gJBdi).
 
 ### Инструкции
 
